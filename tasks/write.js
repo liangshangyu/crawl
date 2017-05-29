@@ -1,13 +1,16 @@
 /**
  * Created by Administrator on 2017/5/29.
  */
-let Movie = require('../model').Movie
+let Movie = require('../model').Movie;
 let async = require('async');
+let debug = require('debug')('crawl:write');
 exports.write = function (movies,callback) {
     async.forEach(movies,function (movie,cb) {
-        Movie.create(movie,cb)
-    })
+        Movie.create(movie,cb);
+        debug(`写入电影：${movie.name}`);
+    },callback)
 }
+/*
 exports.write([{name:'超级大山炮',url:'sanpao'},{name:'白鹿原',url:'bailuyuan'}],function (err) {
     console.log(err)
-})
+})*/
