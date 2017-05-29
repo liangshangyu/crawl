@@ -10,4 +10,5 @@ npm install request iconv-lite cheerio async cron debug mongoose express ejs -S
 ##步骤
 ````
 1:向指定的网页发出请求  得到响应
+2:把得到的数组列表放到数据库中
 ````
